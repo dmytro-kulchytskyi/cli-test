@@ -37,14 +37,14 @@ async function askUserData() {
             name: 'gender',
             message: 'Gender?',
             choices: ['male', 'female'],
-            when: ((answers) => !!answers.name)
+            when: ((answers) => !!answers.name) // If name not set, skip this question
         },
         {
             type: 'number',
             name: 'age',
             message: 'age?',
             validate: (input) => !isNaN(input),
-            when: ((answers) => !!answers.name)
+            when: ((answers) => !!answers.name) // If name not set, skip this question
         }
     ]);
     
